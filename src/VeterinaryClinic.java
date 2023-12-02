@@ -60,7 +60,7 @@ public class VeterinaryClinic {
     public void removePersonal(Animal patient){
         patients.remove(patient);
     } //удаляем персонал из списка
-    public List<Cures> getCure(){ //получать только тот персонал, который может лечить
+    public List<Cures> getCure(){ //получать только тот персонал, который может лечить(врачи)
         List<Cures> result = new ArrayList<>(); //создаем список с результатом лечащих
         for (Personals personal:personals){ //проходим по списку животных по массиву пациентов
             if (personal instanceof Cures){
@@ -70,7 +70,7 @@ public class VeterinaryClinic {
         return result;
     }
 
-    public List<NonCures> getNonCure(){ //получать только тот персонал, который может лечить
+    public List<NonCures> getNonCure(){ //получать только тот персонал, который неможет лечить(медсестры)
         List<NonCures> result = new ArrayList<>(); //создаем список с результатом лечащих
         for (Personals personal:personals){ //проходим по списку животных по массиву пациентов
             if (personal instanceof NonCures){
